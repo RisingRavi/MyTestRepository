@@ -1,0 +1,135 @@
+Git global setup
+git config --global user.name "Vaibhav Kumar"
+git config --global user.email "vaibpathak@gmail.com"
+
+Create a new repository
+
+git clone https://gitlab.devops.com/vaibhav_kumar/bookstore.git
+cd bookstore
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+
+Push an existing folder
+
+cd existing_folder
+git init
+git remote add origin https://gitlab.devops.com/vaibhav_kumar/bookstore.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+
+Push an existing Git repository
+
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin https://gitlab.devops.com/vaibhav_kumar/bookstore.git
+git push -u origin --all
+git push -u origin --tags
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Git is ditributed VCS system
+
+git init // for initiliation
+git ls-files
+git status
+git commit -m "your message" // this will goes in your local repository
+ first time you commit it will ask for usernamea and email
+ 
+git commit -a -m "changes in file"
+
+git log
+
+git log --oneline
+
+git log <filename> to check commit log of one file
+
+git diff <filename>
+git diff --staged <filename> 
+
+git rm <filename> then git commit -m // this will delete the file from working directory as well as local directory
+
+git rm --cached <filename> // this will delete from local repository
+
+vim .gitignore (git commit, git add )// in this we can igonore the file from version control
+
+git checkout --<filename> // delete file from working directory
+
+git reset HEAD <filename>// file is added but if you don't want to commit to statging areai
+
+if we want to remove the commit history and any changes from file 
+
+git reset HEAD~2 // we can remove consequent commit
+
+git reset --mixed HEAD~2
+
+git reset --soft HEAD~2 // make commit the top most comit // changes were there in staging area 
+
+git reset --hard HEAD~2 // which become to first commit chnages for gone from working and local directory
+
+git checkout -b staging master // create a branch in git
+
+git branch // check branch
+
+git log --oneline <branch name>
+
+// swith to branch
+git checkout --<BranchName>
+
+git merge <source branch> < destination branch>
+
+//conflict
+
+
+//Stash
+
+git stash
+
+git stash list 
+
+git show stash <number>
+
+git stash pop 
+
+git stash apply
+
+
+//partial Stash
+
+git stash -p
+
+// remove stash
+
+git stash clear
+git stash drop <particular stash>
+
+
+/////////////////////////Github//////////////////////////////////////////////
+
+git remote add origin ""
+
+git push origin <BranchName>
+
+git branch -d <BranchName> // show it is not fully merged
+
+git branch -D <BranchName>// loacllly deletw
+
+git push origin --delete <branchName> // remotely delete
+
+
+
+https://github.com/redisson/redisson/tree/master/redisson-tomcat
+
+
+
+ 
+
+
+
+
+
+
+	
+
