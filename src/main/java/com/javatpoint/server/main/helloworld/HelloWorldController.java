@@ -17,7 +17,7 @@ public class HelloWorldController
 {
 @Autowired 
 private MessageSource messageSource;
-//using get method and hello-world URI changes here 
+//using get method and hello-world URI
 @GetMapping(path="/hello-world")
 public String helloWorld()
 {
