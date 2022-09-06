@@ -27,7 +27,7 @@ return "Hello World";
 //method- which returns "Hello World"
 public HelloWorldBean helloWorldBean()
 {
-return new HelloWorldBean("Hello World");//constructor of HelloWorldBean
+return new HelloWorldBean("Hello World demo");//constructor of HelloWorldBean
 }
 //passing a path variable 
 //hello-world/path-variable/javatpoint
