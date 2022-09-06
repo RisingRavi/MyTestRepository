@@ -13,33 +13,43 @@ import org.springframework.context.i18n.LocaleContextHolder;
 @Configuration
 //Controller
 @RestController
-public class HelloWorldController 
-{
-@Autowired 
-private MessageSource messageSource;
-//using get method and hello-world URI
-@GetMapping(path="/hello-world")
-public String helloWorld()
-{
-return "Hello World";
-}
-@GetMapping(path="/hello-world-bean")
-//method- which returns "Hello World"
-public HelloWorldBean helloWorldBean()
-{
-return new HelloWorldBean("Hello World demo call again");//constructor of HelloWorldBean
-}
-//passing a path variable 
-//hello-world/path-variable/javatpoint
-@GetMapping(path="/hello-world/path-variable/{name}")
-public HelloWorldBean helloWorldPathVariable(@PathVariable String name)
-{
-return new HelloWorldBean(String.format("Hello World, %s",name));	//%s replace the name
-}
-//internationalization
-@GetMapping(path="/hello-world-internationalized")
-public String helloWorldInternationalized()
-{
-return messageSource.getMessage("good.morning.message", null, LocaleContextHolder.getLocale());
-}
+public class HelloWorldController {
+    @Autowired
+    private MessageSource messageSource;
+
+    /**
+     *  Using get method and hello-world URI
+     * @return
+     */
+    public String helloWorld() {
+        return "Hello World";
+    }
+
+    /**
+     * method which returns "Hello World"
+     *
+     * @return
+     */
+    @GetMapping(path = "/hello-world-bean")
+    public HelloWorldBean helloWorldBean() {
+        return new HelloWorldBean("Hello World demo call again");//constructor of HelloWorldBean
+    }
+
+    /**
+     * passing a path variable , hello-world/path-variable/javatpoint
+     */
+    @GetMapping(path = "/hello-world/path-variable/{name}")
+    public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
+        return new HelloWorldBean(String.format("Hello World, %s", name));    //%s replace the name
+    }
+
+    /**
+     * internationalization
+     *
+     * @return
+     */
+    @GetMapping(path = "/hello-world-internationalized")
+    public String helloWorldInternationalized() {
+        return messageSource.getMessage("good.morning.message", null, LocaleContextHolder.getLocale());
+    }
 }
