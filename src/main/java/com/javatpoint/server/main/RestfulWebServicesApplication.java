@@ -17,6 +17,7 @@ SpringApplication.run(RestfulWebServicesApplication.class, args);
 @Bean
 public  LocaleResolver localeResolver()
 {
+System.out.println("LocaleResolver invoked........... ");
 AcceptHeaderLocaleResolver localeResolver = new AcceptHeaderLocaleResolver();
 localeResolver.setDefaultLocale(Locale.US);
 return localeResolver;
